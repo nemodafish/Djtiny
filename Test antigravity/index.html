@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="no"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DJ Tiny — Nattens lyd</title>
+<meta name="description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0410'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:title" content="djtiny.no">
+<meta property="og:description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
+<meta property="og:image" content="https://djtiny.no/bilder/dj-tiny-logo.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://djtiny.no/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="djtiny.no">
+<meta name="twitter:description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
+<meta name="twitter:image" content="https://djtiny.no/bilder/dj-tiny-logo.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<style>
+:root{--bg:#0A0410;--bg2:#140825;--pink:#FF2E9A;--violet:#8A2BE2;--ice:#5EE9FF;--text:#F3E9FF;--mute:#9E86BC;--line:rgba(243,233,255,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "Outfit",sans-serif;overflow-x:hidden;animation:sidefade .45s ease both}
+@keyframes sidefade{from{opacity:0}to{opacity:1}}
+#spot{position:fixed;inset:0;pointer-events:none;z-index:1;transition:background .15s;
+ background:radial-gradient(340px at 50% 40%,rgba(255,46,154,.16),transparent 70%)}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(20px,5vw,56px);position:relative;z-index:2}
+.neon{font-family:"Monoton",cursive;font-weight:400;letter-spacing:.02em;line-height:1.05;
+ color:#fff;text-shadow:0 0 6px var(--pink),0 0 22px var(--pink),0 0 54px var(--violet)}
+.flicker{animation:flick 6s infinite}
+@keyframes flick{0%,96%,100%{opacity:1}97%{opacity:.35}98%{opacity:.9}99%{opacity:.5}}
+.tag{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ice);font-weight:600}
+header{position:sticky;top:0;z-index:40;background:rgba(10,4,16,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:72px}
+.nav .n{font-family:"Monoton",cursive;font-size:clamp(16px,4vw,20px);margin-right:auto;color:#fff;text-shadow:0 0 10px var(--pink);white-space:nowrap;letter-spacing:.02em}
+.nav a.l{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.nav a.l:hover{color:var(--ice);text-shadow:0 0 12px var(--ice)}
+.btn{display:inline-block;border:none;cursor:pointer;font:600 13px "Outfit",sans-serif;letter-spacing:.18em;text-transform:uppercase;
+ padding:14px 28px;border-radius:999px;color:#fff;background:linear-gradient(90deg,var(--pink),var(--violet));
+ box-shadow:0 0 24px rgba(255,46,154,.5);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(255,46,154,.75)}
+section{padding-block:clamp(70px,10vw,130px)}
+.hero{min-height:88svh;display:grid;place-items:center;text-align:center;position:relative}
+.hero h1{font-size:clamp(40px,10vw,132px);margin:18px 0 0}
+.hero .sub{color:var(--mute);max-width:52ch;margin:26px auto 32px;font-size:19px}
+.beams{position:absolute;inset:0;overflow:hidden;z-index:0}
+.beams i{position:absolute;top:-30%;width:2px;height:160%;transform-origin:top center;filter:blur(2px);opacity:.5;
+ background:linear-gradient(180deg,var(--pink),transparent);animation:sweep 7s ease-in-out infinite alternate}
+.beams i:nth-child(2){background:linear-gradient(180deg,var(--ice),transparent);animation-duration:9s;animation-delay:-2s}
+.beams i:nth-child(3){background:linear-gradient(180deg,var(--violet),transparent);animation-duration:11s;animation-delay:-4s}
+@keyframes sweep{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.card{border:1px solid var(--line);border-radius:18px;padding:28px 24px;background:linear-gradient(180deg,rgba(138,43,226,.14),rgba(20,8,37,.6));
+ transition:border-color .3s,transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:0 18px 50px rgba(255,46,154,.25)}
+.card h3{font:800 21px "Outfit",sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:14px 0 10px}
+.card p{color:var(--mute);font-size:15px;margin:0 0 18px}
+.card .pr{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ice)}
+h2.big{font:800 clamp(34px,6vw,74px)/1 "Outfit",sans-serif;text-transform:uppercase;margin:14px 0 0}
+/* biografi + bildegalleri */
+.bio{margin-top:clamp(46px,6vw,80px);max-width:70ch}
+.scener{display:grid;gap:24px;margin-top:32px}
+.scener .stag{margin-bottom:12px}
+.sub-h{font:800 clamp(22px,3vw,32px) "Outfit",sans-serif;text-transform:uppercase;margin:12px 0 16px}
+.bio p{color:var(--mute);margin:0 0 16px}
+.galleri{margin-top:clamp(40px,5vw,66px)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.gal figure{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(20,8,37,.6)}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .4s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figure.tom{aspect-ratio:4/5;display:grid;place-items:center;
+ background:linear-gradient(150deg,rgba(138,43,226,.28),rgba(255,46,154,.14));border-style:dashed}
+/* media-faner */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+.tab{cursor:pointer;font:600 12px "Outfit",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
+ background:transparent;border:1px solid var(--line);border-radius:999px;padding:11px 22px;transition:color .2s,border-color .2s,background .2s}
+.tab:hover{color:var(--text);border-color:var(--ice)}
+.tab.on{color:#0A0410;background:var(--ice);border-color:var(--ice)}
+.panel{display:none;margin-top:34px}
+.panel.on{display:block}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.vid{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(20,8,37,.6);display:block;
+ transition:border-color .3s,transform .3s}
+.vid:hover{border-color:var(--pink);transform:translateY(-5px)}
+.thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb.tom{background:linear-gradient(150deg,rgba(138,43,226,.34),rgba(255,46,154,.16))}
+.play{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:26px;color:#fff;
+ text-shadow:0 0 18px var(--pink)}
+.mlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.mlist li{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.mt{font:600 clamp(17px,2.2vw,22px) "Outfit",sans-serif}
+.mt small{display:block;font-weight:400;font-size:14px;color:var(--mute);margin-top:4px}
+.hor{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);border:1px solid var(--line);
+ border-radius:999px;padding:9px 20px;white-space:nowrap;transition:background .2s,color .2s}
+.hor:hover{background:var(--ice);color:#0A0410}
+.mnote{color:var(--mute);font-size:14px;margin-top:18px}
+/* mash-up-spiller */
+.mash{display:grid;border-top:1px solid var(--line)}
+.spor{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.spor audio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.spor{position:relative}
+.spor.feil .mt{color:var(--mute)}
+.spor.feil .tid{color:var(--pink)}
+.pb{flex:none;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:15px;
+ background:transparent;border:1px solid var(--line);color:var(--ice);transition:background .2s,color .2s,box-shadow .2s}
+.pb:hover{border-color:var(--ice);box-shadow:0 0 22px rgba(94,233,255,.35)}
+.pb.spiller{background:var(--ice);color:#0A0410;border-color:var(--ice)}
+.spinfo{flex:1;min-width:0}
+.bar{margin-top:10px;height:4px;border-radius:4px;background:rgba(243,233,255,.14);cursor:pointer;position:relative}
+.bar i{position:absolute;inset:0;width:0;border-radius:4px;background:linear-gradient(90deg,var(--pink),var(--ice))}
+.tid{flex:none;font-size:13px;letter-spacing:.06em;color:var(--mute);font-variant-numeric:tabular-nums}
+.scwrap{margin-top:14px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(20,8,37,.6)}
+.scwrap iframe{display:block;width:100%;height:166px;border:0}
+.miks{display:grid;gap:34px}
+.miks article{border-top:1px solid var(--line);padding-top:22px}
+.mrad{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+.vid{cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%;padding:0}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(6,2,12,.94);backdrop-filter:blur(10px);display:grid;place-items:center;padding:clamp(16px,4vw,48px)}
+.lb[hidden]{display:none}
+.lbf{width:min(1100px,100%);aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+ box-shadow:0 0 70px rgba(255,46,154,.35);background:#000}
+.lbf.st{width:auto;height:min(88vh,900px);aspect-ratio:9/16;max-width:100%}
+.lbf iframe,.lbf video{width:100%;height:100%;border:0;display:block;background:#000}
+.lberr{display:grid;place-items:center;height:100%;margin:0;padding:24px;text-align:center;color:var(--mute);font-size:15px;line-height:1.7}
+.lberr b{color:var(--ice)}
+.lbx{position:absolute;top:clamp(14px,3vw,26px);right:clamp(14px,3vw,26px);cursor:pointer;
+ background:rgba(20,8,37,.8);border:1px solid var(--line);color:var(--text);border-radius:999px;
+ width:46px;height:46px;font-size:17px;transition:border-color .2s,color .2s}
+.lbx:hover{border-color:var(--pink);color:var(--pink)}
+.okbox{background:linear-gradient(180deg,rgba(138,43,226,.18),rgba(20,8,37,.94));border:1px solid var(--line);
+ border-radius:20px;padding:clamp(32px,5vw,50px);max-width:420px;width:100%;text-align:center;box-shadow:0 0 70px rgba(255,46,154,.35)}
+.okicon{font-size:40px;color:var(--ice);text-shadow:0 0 20px var(--ice);margin:0 0 14px}
+.okbox h3{font:800 22px "Outfit",sans-serif;text-transform:uppercase;margin:0 0 12px}
+.okbox p{color:var(--mute);margin:0 0 26px}
+.g-recaptcha{margin-top:2px}
+.steder{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.sted{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:linear-gradient(180deg,rgba(138,43,226,.12),rgba(20,8,37,.55));
+ transition:border-color .3s,transform .3s}
+.sted:hover{border-color:var(--pink);transform:translateY(-4px)}
+.stag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ice);margin:0 0 10px;font-weight:600}
+.sted h3{font:800 clamp(18px,2.2vw,22px)/1.2 "Outfit",sans-serif;margin:0 0 18px;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;letter-spacing:.04em;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap}
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,70px);align-items:start}
+form{display:grid;gap:16px}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:400 16px "Outfit",sans-serif;color:var(--text);background:rgba(20,8,37,.7);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink)}
+textarea{min-height:120px;resize:vertical}
+.mail{font-size:clamp(20px,2.6vw,30px);font-weight:600;color:var(--ice);border-bottom:1px solid rgba(94,233,255,.4);
+ padding-bottom:4px;transition:color .2s,text-shadow .2s,border-color .2s;word-break:break-all}
+.mail:hover{color:#fff;text-shadow:0 0 18px var(--ice);border-color:var(--ice)}
+.tel{color:var(--pink);font-weight:600;transition:text-shadow .2s}
+.tel:hover{text-shadow:0 0 16px var(--pink)}
+footer{border-top:1px solid var(--line);padding-block:44px;color:var(--mute);font-size:13px;letter-spacing:.1em}
+footer a.mailsm{color:var(--ice)}footer a.mailsm:hover{text-shadow:0 0 14px var(--ice)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.menub{display:none;flex:none;order:2;background:transparent;border:1px solid var(--line);color:var(--text);
+ border-radius:10px;width:42px;height:42px;font-size:18px;line-height:1;cursor:pointer}
+.navlinks{display:flex;align-items:center;gap:26px}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.book{grid-template-columns:1fr}
+ .nav{position:relative}
+ .menub{display:inline-flex;align-items:center;justify-content:center}
+ .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+  background:rgba(10,4,16,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  max-height:0;overflow:hidden;transition:max-height .25s ease}
+ .navlinks a.l{display:block;padding:16px clamp(20px,5vw,56px)}
+ .nav.open .navlinks{max-height:320px}
+ .omgrid{grid-template-columns:1fr!important}.gal{grid-template-columns:1fr 1fr}.vids{grid-template-columns:1fr 1fr}
+ .steder{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.gal{grid-template-columns:1fr}.vids{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#spot{display:none}}
+</style></head><body>
+<div id="spot"></div>
+
+<header><div class="wrap nav">
+ <a class="n" href="#">DJ TINY</a>
+ <div class="navlinks" id="navlinks">
+  <a class="l" href="#om">Om DJ Tiny</a><a class="l" href="#tjenester">Tjenester</a><a class="l" href="#media">Media</a><a class="l" href="#datoer">Bookinger</a>
+ </div>
+ <button class="menub" id="menub" type="button" aria-label="Åpne meny" aria-expanded="false" aria-controls="navlinks">☰</button>
+ <a class="btn" href="#book">Book kvelden</a>
+</div></header>
+
+<section class="hero">
+ <div class="beams"><i style="left:18%"></i><i style="left:52%"></i><i style="left:81%"></i></div>
+ <div class="wrap">
+  <p class="tag">Klubb · Fest · Bryllup</p>
+  <h1 class="neon flicker">DJ Tiny</h1>
+  <p class="sub">DJ Tiny kombinerer hits, klubbmusikk og høy energi for et fullt dansegulv.</p>
+  <a class="btn" href="#book">Sjekk ledig dato</a>
+ </div>
+</section>
+
+<section id="om"><div class="wrap">
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,70px)" class="omgrid">
+  <div><p class="tag">Om DJ Tiny</p><h2 class="big">Leser rommet.<br>Løfter kvelden.</h2></div>
+  <div><p style="color:var(--mute);font-size:19px">En dyktig DJ som har holdt på i mange år, med gjennomførte oppdrag på mange steder. Gjestene skal ha det gøy på dansegulvet.</p>
+  <p style="color:var(--mute)">DJ Tiny leverer som bestilt, avhengig av ønske fra oppdragsgiver: afro house, moombahton, afterski, 80- og 90-hits og dagens hits.</p>
+  <p class="tag" style="margin-top:24px">Område: Østlandet</p></div>
+ </div>
+
+ <div class="bio">
+  <p class="tag">Biografi</p>
+  <h3 class="sub-h">Lang erfaring. Høy energi.</h3>
+  <p>DJ Tiny er født i 1972 og har holdt på siden 90-tallet. Etter femten år tok han en pause fra DJ-livet, men var tilbake bak pulten kort tid etter at pandemien var over. Siden den gang har det blitt en lang rekke klubbkvelder, bryllup og arrangementer på Østlandet.</p>
+  <p>Repertoaret dekker det meste: house, dance og EDM, kommersielle hits fra 70-, 80-, 90- og 2000-tallet, RnB og hiphop, reggaeton, moombahton, afro house og latino. Hva som spilles avgjøres av publikummet som faktisk er der, ikke en fast spilleliste.</p>
+  <p>Det han er mest kjent for, er overgangene — sømløse skift som holder dansegulvet fullt fra første til siste låt. Kombinert med tett publikumskontakt dukker det gjerne opp egne remikser av kjente låter og allsang underveis.</p>
+  <p>Enten det er et lite selskap eller en stor scene, tilpasses settet stedet og gjestene — ikke omvendt.</p>
+
+  <div class="scener">
+   <div>
+    <p class="stag">Faste steder i dag</p>
+    <div class="chips"><span>Fahlstrøm Gjøvik</span><span>Retro Bar &amp; Scene</span><span>Scandic Lillestrøm</span></div>
+   </div>
+   <div>
+    <p class="stag">Har spilt på</p>
+    <div class="chips"><span>Fuser Lillestrøm</span><span>Tiger Tiger Oslo</span><span>Nikkers Lillehammer</span><span>Oslo Marathon</span><span>Studenthuset Halden</span><span>Faktor / C-IN Oslo</span><span>Taket Steen &amp; Strøm</span><span>Gastro Bar Jessheim</span><span>Colosseum Tromsø</span><span>Låven Trysil</span><span>Heiskroken Trysil</span><span>med flere</span></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="galleri">
+  <p class="tag">DJ-bilder</p>
+  <div class="gal">
+   <figure><img src="bilder/dj-tiny-1.jpg" alt="DJ Tiny bak pulten på utendørsarrangement" loading="lazy"></figure>
+   <figure><img src="bilder/dj-tiny-2.jpg" alt="Mikser og pult med fullt lokale i bakgrunnen" loading="lazy"></figure>
+   <figure><img src="bilder/dj-tiny-3.jpg" alt="DJ Tiny i arbeid under blått lys" loading="lazy"></figure>
+  </div>
+ </div>
+</div></section>
+
+<section id="media"><div class="wrap">
+ <p class="tag">Media</p><h2 class="big">Video, mikstapes<br>og egne mash-ups</h2>
+
+ <div class="tabs" role="tablist">
+  <button class="tab on" role="tab" aria-selected="true" data-p="p-video">Video</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="p-miks">Mikstapes</button>
+  <button class="tab" role="tab" aria-selected="false" data-p="p-mash">Egne mash-ups</button>
+ </div>
+
+ <div class="panel on" id="p-video">
+  <div class="vids" id="vids"></div>
+  <p class="mnote" id="vidtom" hidden>Ingen videoer lagt inn ennå. Lim inn lenkene i listen <b>videoer</b> nederst i filen.</p>
+ </div>
+
+ <div class="panel" id="p-miks">
+  <div class="miks">
+   <article>
+    <div class="mrad"><span class="mt">In The Afro House, Afro Dance Mix 1<small>Afro house / afro tech · september 2026</small></span>
+     <a class="hor" href="https://soundcloud.com/glenn-krantz/in-the-afro-house-afro-dance" target="_blank" rel="noopener">Hør</a></div>
+    <div class="scwrap"><iframe title="In The Afro House, Afro Dance Mix 1 på SoundCloud" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2390865345&color=%23ff2e9a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe></div>
+   </article>
+
+   <article>
+    <div class="mrad"><span class="mt">Summer House 2026 Mix 1<small>House · juli 2026</small></span>
+     <a class="hor" href="https://soundcloud.com/glenn-krantz/summer-house-2026-mix-1" target="_blank" rel="noopener">Hør</a></div>
+    <div class="scwrap"><iframe title="Summer House 2026 Mix 1 på SoundCloud" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2367740777&color=%23ff2e9a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe></div>
+   </article>
+
+   <article>
+    <div class="mrad"><span class="mt">In The Club Dance Mix 2026<small>Dance / EDM · mars 2026</small></span>
+     <a class="hor" href="https://soundcloud.com/glenn-krantz/in-the-club-dance-mix-2026" target="_blank" rel="noopener">Hør</a></div>
+    <div class="scwrap"><iframe title="In The Club Dance Mix 2026 på SoundCloud" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2293846487&color=%23ff2e9a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe></div>
+   </article>
+  </div>
+ </div>
+
+ <div class="panel" id="p-mash">
+  <div class="mash">
+   <article class="spor">
+    <button class="pb" type="button" aria-label="Spill av WTF! Satisfaction">▶</button>
+    <div class="spinfo"><span class="mt">WTF! Satisfaction<small>David Guetta × Benny Benassi</small></span>
+     <div class="bar"><i></i></div></div>
+    <span class="tid">–:–</span>
+    <audio preload="metadata" src="lyd/mashup-1.mp3"></audio>
+   </article>
+
+   <article class="spor">
+    <button class="pb" type="button" aria-label="Spill av Starship, One More Time, Superstar">▶</button>
+    <div class="spinfo"><span class="mt">Starship, One More Time, Superstar<small>Nicki Minaj × Daft Punk × Jamelia</small></span>
+     <div class="bar"><i></i></div></div>
+    <span class="tid">–:–</span>
+    <audio preload="metadata" src="lyd/mashup-2.mp3"></audio>
+   </article>
+
+   <article class="spor">
+    <button class="pb" type="button" aria-label="Spill av RIDIN vs. Så Easy">▶</button>
+    <div class="spinfo"><span class="mt">RIDIN vs. Så Easy<small>Gabrielle × Lars Vaular</small></span>
+     <div class="bar"><i></i></div></div>
+    <span class="tid">–:–</span>
+    <audio preload="metadata" src="lyd/mashup-3.mp3"></audio>
+   </article>
+  </div>
+  <p class="mnote">Egne produksjoner og edits, spilt live på gulvet.</p>
+ </div>
+</div></section>
+
+<section id="tjenester"><div class="wrap">
+ <p class="tag">Tjenester</p>
+ <div class="cards">
+  <article class="card"><p class="tag">01</p><h3>Bryllup</h3><p>Fra mingling til nattmat. Førstedans, ønskelåter og sperreliste avtales i forkant.</p><span class="pr">Etter avtale</span></article>
+  <article class="card"><p class="tag">02</p><h3>Firmafest</h3><p>Julebord, sommerfest og jubileum. Mikrofon til toastmaster inkludert.</p><span class="pr">Etter avtale</span></article>
+  <article class="card"><p class="tag">03</p><h3>Bursdag</h3><p>Runde dager, konfirmasjon og hagefest. Volum naboene tåler.</p><span class="pr">Etter avtale</span></article>
+  <article class="card"><p class="tag">04</p><h3>Klubb</h3><p>Faste kvelder eller enkeltoppdrag på utested, house og disco til stengetid.</p><span class="pr">Etter avtale</span></article>
+  <article class="card"><p class="tag">05</p><h3>Musikkbingo</h3><p>Ferdige brett, egne spillelister og programledelse fra scenen. Passer like godt på pub som på firmafest.</p><span class="pr">Etter avtale</span></article>
+  <article class="card"><p class="tag">06</p><h3>Events</h3><p>Større arrangementer, festivaler og lanseringer. Lyd, lys og gjennomføring etter behov.</p><span class="pr">Etter avtale</span></article>
+ </div>
+</div></section>
+
+<section id="datoer"><div class="wrap">
+ <p class="tag">Bookinger</p><h2 class="big">Kommende</h2>
+ <div class="steder">
+  <article class="sted">
+   <p class="stag">Musikkbingo</p>
+   <h3>Hjørnet Restaurant, Triaden</h3>
+   <div class="chips"><span>4. sep</span><span>18. sep</span><span>9. okt</span><span>23. okt</span><span>6. nov</span><span>20. nov</span><span>18. des</span></div>
+  </article>
+  <article class="sted">
+   <p class="stag">DJ</p>
+   <h3>Fahlstrøm</h3>
+   <div class="chips"><span>26. sep</span><span>21. nov</span><span>12. des</span></div>
+  </article>
+  <article class="sted">
+   <p class="stag">Musikkbingo</p>
+   <h3>Retro Bar &amp; Scene</h3>
+   <div class="chips"><span>21. nov</span><span>12. des</span></div>
+  </article>
+ </div>
+</div></section>
+
+<section id="book"><div class="wrap book">
+ <div><p class="tag">Booking</p><h2 class="big" style="font-size:clamp(30px,4.6vw,54px)">Send<br>forespørsel</h2>
+  <p style="color:var(--mute)">Svar med pris og bekreftet dato, vanligvis innen ett døgn.</p>
+  <p style="margin:22px 0 6px"><a class="mail" href="mailto:booking@djtiny.no?subject=Bookingforesp%C3%B8rsel%20DJ%20Tiny">booking@djtiny.no</a></p>
+  <p style="color:var(--mute);font-size:15px"><a class="tel" href="tel:+4748066825">480 66 825</a> · svar innen 24 t</p></div>
+ <form id="f" action="https://formspree.io/f/mppzpzep" method="POST">
+  <input type="hidden" name="_subject" value="Ny bookingforespørsel – DJ Tiny">
+  <div class="row"><label>Navn<input name="navn" required maxlength="100" autocomplete="name"></label><label>E-post<input type="email" name="epost" required maxlength="254" autocomplete="email"></label></div>
+  <div class="row"><label>Dato<input type="date" name="dato" required></label>
+   <label>Type<select name="type"><option>Bryllup</option><option>Firmafest</option><option>Bursdag</option><option>Klubb</option><option>Musikkbingo</option><option>Event</option></select></label></div>
+  <label>Sted<input name="sted" placeholder="By eller lokale" maxlength="200" autocomplete="off"></label>
+  <label>Om arrangementet<textarea name="melding" maxlength="3000"></textarea></label>
+  <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+   <label>Firma<input type="text" name="firma" tabindex="-1" autocomplete="off"></label>
+  </div>
+  <div class="g-recaptcha" data-sitekey="6Le-W6ItAAAAAJV6iIVcPjlhjmgAWaSN2qNGXcd1" data-theme="dark"></div>
+  <button class="btn" type="submit">Send forespørsel</button>
+  <p class="mnote">Ved å sende inn godtar du at opplysningene brukes til å svare på henvendelsen din. Les mer i <a href="personvern.html" style="color:var(--ice)">personvernerklæringen</a>.</p>
+  <p class="mnote" id="fstatus" role="status" hidden></p>
+ </form>
+</div></section>
+
+<footer><div class="wrap foot">
+ <span>© DJ Tiny 2026</span>
+ <a class="mailsm" href="mailto:booking@djtiny.no?subject=Bookingforesp%C3%B8rsel%20DJ%20Tiny">booking@djtiny.no</a>
+ <a href="personvern.html">Personvern</a>
+ <a href="#">Til toppen ↑</a></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Videospiller" hidden>
+ <button class="lbx" id="lbx" aria-label="Lukk video">✕</button>
+ <div class="lbf" id="lbf"></div>
+</div>
+
+<div class="lb" id="lbok" role="dialog" aria-modal="true" aria-label="Bekreftelse" hidden>
+ <div class="okbox">
+  <p class="okicon">✓</p>
+  <h3>Takk for forespørselen!</h3>
+  <p>Vi svarer med pris og bekreftet dato, vanligvis innen 24 timer.</p>
+  <button class="btn" id="lbokx" type="button">Lukk</button>
+ </div>
+</div>
+
+<script src="app.js" defer></script>
+</body></html>
