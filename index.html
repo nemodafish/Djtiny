@@ -4,20 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>DJ Tiny</title>
-  <meta name="description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
+  <title>DJ Tiny — DJ på Østlandet til bryllup, firmafest og klubb</title>
+  <meta name="description"
+    content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet. Send forespørsel og få svar innen 24 timer.">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0410'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:title" content="DJ Tiny">
-  <meta property="og:description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
-  <meta property="og:image" content="https://djtiny.no/bilder/dj-tiny-3.jpg">
+  <meta property="og:description"
+    content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet.">
+  <meta property="og:image" content="https://djtiny.no/bilder/og-forside.jpg">
+  <meta property="og:image:secure_url" content="https://djtiny.no/bilder/og-forside.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DJ Tiny — DJ til bryllup, firmafest, klubb og events på Østlandet.">
   <meta property="og:url" content="https://djtiny.no/">
+  <link rel="canonical" href="https://djtiny.no/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DJ Tiny">
-  <meta name="twitter:description" content="DJ Tiny — klubb, bryllup og fest. Book kvelden.">
-  <meta name="twitter:image" content="https://djtiny.no/bilder/dj-tiny-3.jpg">
+  <meta name="twitter:description"
+    content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet.">
+  <link rel="preload" as="image" href="bilder/dancefloor-bg.webp" fetchpriority="high">
+  <meta name="twitter:image" content="https://djtiny.no/bilder/og-forside.jpg">
+  <meta name="twitter:image:alt" content="DJ Tiny — DJ til bryllup, firmafest, klubb og events på Østlandet.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@200;400;600;800&display=swap"
     rel="stylesheet">
@@ -232,7 +243,7 @@
       position: relative;
       overflow: hidden;
       isolation: isolate;
-      background: #07020d url("bilder/dancefloor-bg.png") center/cover no-repeat
+      background: #07020d url("bilder/dancefloor-bg.webp") center/cover no-repeat
     }
 
     .hero-video {
@@ -975,6 +986,10 @@
       flex-wrap: wrap
     }
 
+    .mobile-cta {
+      display: none
+    }
+
     .menub {
       display: none;
       flex: none;
@@ -1070,6 +1085,38 @@
     }
 
     @media(max-width:560px) {
+      body {
+        padding-bottom: 76px
+      }
+
+      section {
+        padding-block: 58px
+      }
+
+      .hero {
+        min-height: calc(100svh - 72px);
+        padding-block: 74px
+      }
+
+      .hero .sub {
+        font-size: 16px;
+        max-width: 32ch
+      }
+
+      .hero-video {
+        object-position: center center
+      }
+
+      .btn {
+        padding: 14px 20px
+      }
+
+      .knapper .btn,
+      .hero .btn {
+        width: min(100%, 320px);
+        text-align: center
+      }
+
       .cards {
         grid-template-columns: 1fr
       }
@@ -1080,6 +1127,24 @@
 
       .vids {
         grid-template-columns: 1fr
+      }
+
+      .mobile-cta {
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        z-index: 60;
+        display: flex;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 14px 18px;
+        color: #fff;
+        background: linear-gradient(90deg, var(--pink), var(--violet));
+        box-shadow: 0 0 34px rgba(255, 46, 154, .58);
+        font: 800 13px "Outfit", sans-serif;
+        letter-spacing: .16em;
+        text-transform: uppercase
       }
     }
 
@@ -1118,7 +1183,7 @@
   </header>
 
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="bilder/dancefloor-bg.png"
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="bilder/dancefloor-bg.webp"
       aria-hidden="true">
       <source src="video/dancefloor-bg.mp4" type="video/mp4">
     </video>
@@ -1399,6 +1464,8 @@
       <a href="#">Til toppen ↑</a>
     </div>
   </footer>
+
+  <a class="mobile-cta" href="#book">Book DJ Tiny</a>
 
   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Videospiller" hidden>
     <button class="lbx" id="lbx" aria-label="Lukk video">✕</button>
