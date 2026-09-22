@@ -14,7 +14,7 @@
   <meta property="og:title" content="Musikk Bingo Falsk Alarm — DJ Tiny">
   <meta property="og:description"
     content="Musikk Bingo Falsk Alarm — mer musikk, mer latter, mer liv i lokalet.">
-  <meta property="og:image" content="https://djtiny.no/bilder/dj-tiny-3.jpg">
+  <meta property="og:image" content="https://djtiny.no/bilder/musikkbingo-bg.png">
   <meta property="og:url" content="https://djtiny.no/musikkbingo.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,7 +206,31 @@
       display: grid;
       place-items: center;
       text-align: center;
-      position: relative
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #07020d url("bilder/musikkbingo-bg.png") center/cover no-repeat
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: .82;
+      pointer-events: none
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(10, 4, 16, .28), rgba(10, 4, 16, .68) 48%, rgba(10, 4, 16, .9) 100%),
+        linear-gradient(180deg, rgba(10, 4, 16, .48), rgba(10, 4, 16, .22) 44%, rgba(10, 4, 16, .95))
     }
 
     .hero h1 {
@@ -225,7 +249,7 @@
       position: absolute;
       inset: 0;
       overflow: hidden;
-      z-index: 0
+      z-index: 1
     }
 
     .beams i {
@@ -538,6 +562,10 @@
         animation: none !important;
         transition: none !important
       }
+
+      .hero-video {
+        display: none
+      }
     }
   </style>
 </head>
@@ -551,6 +579,11 @@
   </header>
 
   <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="bilder/musikkbingo-bg.png"
+      aria-hidden="true">
+      <source src="video/musikkbingo-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="beams"><i style="left:18%"></i><i style="left:52%"></i><i style="left:81%"></i></div>
     <div class="wrap">
       <p class="tag">Pub · Firmafest · Julebord</p>
