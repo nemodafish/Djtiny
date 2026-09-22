@@ -551,10 +551,6 @@
       flex-wrap: wrap
     }
 
-    .mobile-cta {
-      display: none
-    }
-
     @media(max-width:900px) {
       .cards {
         grid-template-columns: 1fr 1fr
@@ -568,10 +564,6 @@
     }
 
     @media(max-width:560px) {
-      body {
-        padding-bottom: 76px
-      }
-
       section {
         padding-block: 58px
       }
@@ -609,23 +601,6 @@
         grid-template-columns: 1fr
       }
 
-      .mobile-cta {
-        position: fixed;
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        z-index: 60;
-        display: flex;
-        justify-content: center;
-        border-radius: 999px;
-        padding: 14px 18px;
-        color: #fff;
-        background: linear-gradient(90deg, var(--pink), var(--violet));
-        box-shadow: 0 0 34px rgba(255, 46, 154, .58);
-        font: 800 13px "Outfit", sans-serif;
-        letter-spacing: .16em;
-        text-transform: uppercase
-      }
     }
 
     @media(prefers-reduced-motion:reduce) {
@@ -809,7 +784,6 @@
     </div>
   </footer>
 
-  <a class="mobile-cta" href="#book">Book musikkbingo</a>
 </body>
 
 </html>
