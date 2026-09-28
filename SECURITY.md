@@ -14,7 +14,7 @@ Booking-skjemaet sendes direkte fra nettleseren til **Formspree** (tredjeparts s
 ## Implementerte sikkerhetstiltak
 
 - **Content-Security-Policy + øvrige security headers** i [`_headers`](\_headers) (leses automatisk av Netlify, også ved drag-and-drop-deploy). Restriktiv CSP bygget etter hvilke eksterne tjenester siden faktisk bruker (Google Fonts, reCAPTCHA, Formspree, SoundCloud/YouTube/Vimeo-embeds) — ikke en åpen `*`-policy.
-- **Ingen inline `<script>`** — all JS ligger i [`app.js`](app.js) og lastes via `<script src="app.js">`. Dette gjør at CSP kan sette `script-src` uten `unsafe-inline`, som er den viktigste enkeltbeskyttelsen mot at en eventuell fremtidig injeksjon faktisk får kjøre.
+- **Ingen inline `<script>`** — all JS ligger i egne filer ([`app.js`](app.js) og [`datoer.js`](datoer.js)) og lastes via `<script src="…">`. Dette gjør at CSP kan sette `script-src` uten `unsafe-inline`, som er den viktigste enkeltbeskyttelsen mot at en eventuell fremtidig injeksjon faktisk får kjøre.
 - **Trygg DOM-bygging**: all dynamisk HTML (videominiatyrer, feilmeldinger i lightbox) bygges nå med `createElement`/`textContent`/`setAttribute` i stedet for strengsammensatt `innerHTML`.
 - **reCAPTCHA v2** på bookingskjemaet, verifisert server-side av Formspree via secret key (satt i Formspree-dashbordet, ikke i kode).
 - **Honeypot-felt + minimumstid før innsending** i [app.js](app.js): et usynlig felt (`name="firma"`) som ekte brukere aldri ser eller fyller ut (tabindex -1, aria-hidden, off-screen), samt en sjekk på at skjemaet ikke sendes raskere enn 2,5 sekunder etter sidelast. Begge deler avviser stille — boten får en "suksess"-respons uten at noe faktisk sendes.
