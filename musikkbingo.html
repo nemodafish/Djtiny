@@ -430,6 +430,20 @@
       margin: 0
     }
 
+    .praktisk {
+      margin-top: 52px
+    }
+
+    .praktisk .liste {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 18px
+    }
+
+    .praktisk .liste li {
+      padding-right: 24px
+    }
+
     .steder {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -463,6 +477,11 @@
       font: 800 clamp(18px, 2.2vw, 22px)/1.2 "Outfit", sans-serif;
       margin: 0 0 18px;
       text-transform: uppercase
+    }
+
+    .sted p:not(.stag) {
+      color: var(--mute);
+      margin: 0
     }
 
     .chips {
@@ -580,7 +599,8 @@
 
       .todelt,
       .steder,
-      .fordeler {
+      .fordeler,
+      .praktisk .liste {
         grid-template-columns: 1fr
       }
     }
@@ -705,6 +725,29 @@
           <p>Første med full rad roper bingo, og så spilles det videre til neste runde.</p>
         </article>
       </div>
+      <div class="praktisk">
+        <p class="tag">Praktisk</p>
+        <ul class="liste">
+          <li>
+            <p>Kan gjennomføres som enkeltdeltakere eller lag.</p>
+          </li>
+          <li>
+            <p>Deltakerne henter bingobonger og penn.</p>
+          </li>
+          <li>
+            <p>Musikken spilles fortløpende av DJ, hvor låtene blir mixet live.</p>
+          </li>
+          <li>
+            <p>Trekker 5 vinnere eller det antall man blir enige om.</p>
+          </li>
+          <li>
+            <p>Arrangør stiller med premier til musikkbingo.</p>
+          </li>
+          <li>
+            <p>Tidsbruk ca. 1,5–3 timer.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -723,7 +766,8 @@
         </li>
         <li>
           <h3>Egne spillelister</h3>
-          <p>Spillelistene er satt sammen av DJ Tiny, med låter folk kjenner igjen.</p>
+          <p>Spillelistene er satt sammen av DJ Tiny, med låter folk kjenner igjen. Man kan velge mellom allsang,
+            rock eller musikk fra ulike tiår.</p>
         </li>
         <li>
           <h3>DJ og bingovertinner</h3>
@@ -731,6 +775,27 @@
             til slutt.</p>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section id="pakker" style="padding-top:0">
+    <div class="wrap">
+      <p class="tag">Pakker</p>
+      <h2 class="big">Velg pakke</h2>
+      <div class="steder">
+        <article class="sted">
+          <p class="stag">Komplett pakke</p>
+          <h3>DJ, lyd og lys</h3>
+          <p>Musikkbingo leveres sammen med våre komplette pakker med DJ, lyd og lys. Dette drar garantert opp
+            stemningen, særlig hvis man velger allsangpakken. Publikum synger med og danser på bordet (hvis mulig).</p>
+        </article>
+        <article class="sted">
+          <p class="stag">Kun musikkbingo</p>
+          <h3>Bingovert og bonger</h3>
+          <p>Vi kan også levere kun musikkbingovert med bingobonger til steder som har lydanlegg fra før, f.eks.
+            utesteder, puber og restauranter.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -761,6 +826,16 @@
 
       </div>
       <p class="mnote" id="datotom" hidden>Nye datoer kommer snart.</p>
+    </div>
+  </section>
+
+  <section id="firma">
+    <div class="wrap konsept">
+      <p class="tag">For firma</p>
+      <h2 class="big">Kick-off med<br>musikkbingo</h2>
+      <p>Mange firma velger å arrangere en kick-off hvor man starter med det faglige og deretter en musikkbingo som
+        oppvarming før eller etter en middag. Senere blir det musikk og dans utover kvelden med DJ. Musikkbingo
+        skaper også samhold blant kolleger og venner.</p>
     </div>
   </section>
 
