@@ -1,0 +1,8 @@
+# Lages av bygg.mjs (lokalt eller hos Netlify), skal ikke i git
+dist/
+
+# Hemmeligheter, lokale innstillinger og systemfiler
+.env*
+.claude/
+.DS_Store
+Thumbs.db

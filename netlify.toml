@@ -1,0 +1,5 @@
+# Netlify publiserer bare dist/, som bygg.mjs lager av nettsidefilene i roten.
+# Se forklaringen øverst i bygg.mjs.
+[build]
+  command = "node bygg.mjs"
+  publish = "dist"
