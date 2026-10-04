@@ -11,7 +11,8 @@
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0410'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
-  <meta property="og:title" content="DJ Tiny">
+  <meta property="og:site_name" content="DJ Tiny">
+  <meta property="og:title" content="DJ Tiny — DJ på Østlandet">
   <meta property="og:description"
     content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet.">
   <meta property="og:image" content="https://djtiny.no/bilder/og-forside.jpg">
@@ -23,16 +24,31 @@
   <meta property="og:url" content="https://djtiny.no/">
   <link rel="canonical" href="https://djtiny.no/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DJ Tiny">
+  <meta name="twitter:title" content="DJ Tiny — DJ på Østlandet">
   <meta name="twitter:description"
     content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet.">
-  <link rel="preload" as="image" href="bilder/dancefloor-bg.webp" fetchpriority="high">
   <meta name="twitter:image" content="https://djtiny.no/bilder/og-forside.jpg">
   <meta name="twitter:image:alt" content="DJ Tiny — DJ til bryllup, firmafest, klubb og events på Østlandet.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@200;400;600;800&display=swap"
-    rel="stylesheet">
+  <meta name="theme-color" content="#0A0410">
+  <link rel="preload" as="image" href="bilder/dancefloor-bg.webp" fetchpriority="high">
+  <link rel="preload" href="fonter/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonter/fonter.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "@id": "https://djtiny.no/#dj-tiny",
+      "name": "DJ Tiny",
+      "description": "DJ til bryllup, firmafest, bursdag, klubb og events på Østlandet, og musikkbingoen Falsk Alarm.",
+      "url": "https://djtiny.no/",
+      "image": "https://djtiny.no/bilder/og-forside.jpg",
+      "email": "booking@djtiny.no",
+      "telephone": "+47 480 66 825",
+      "areaServed": { "@type": "AdministrativeArea", "name": "Østlandet" },
+      "sameAs": ["https://soundcloud.com/glenn-krantz"]
+    }
+  </script>
   <style>
     :root {
       --bg: #0A0410;
@@ -94,6 +110,27 @@
     :focus-visible {
       outline: 2px solid var(--ice);
       outline-offset: 3px
+    }
+
+    .hopp {
+      position: fixed;
+      top: -80px;
+      left: 16px;
+      z-index: 100;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--ice);
+      color: var(--bg);
+      font-weight: 600;
+      transition: top .2s
+    }
+
+    .hopp:focus {
+      top: 16px
+    }
+
+    main:focus {
+      outline: none
     }
 
     .wrap {
@@ -437,6 +474,7 @@
 
     .gal img {
       width: 100%;
+      height: auto;
       aspect-ratio: 4/5;
       object-fit: cover;
       display: block;
@@ -1206,22 +1244,24 @@
 </head>
 
 <body>
+  <a class="hopp" href="#innhold">Hopp til innhold</a>
   <div id="spot"></div>
 
   <header>
     <div class="wrap nav">
       <a class="n" href="#">DJ TINY</a>
-      <div class="navlinks" id="navlinks">
+      <nav class="navlinks" id="navlinks" aria-label="Hovedmeny">
         <a class="l" href="#om">Om DJ Tiny</a><a class="l" href="#tjenester">Tjenester</a><a class="l"
           href="#media">Media</a><a class="l" href="#datoer">Bookinger</a><a class="l mb"
           href="musikkbingo.html">Musikkbingo</a>
-      </div>
+      </nav>
       <button class="menub" id="menub" type="button" aria-label="Åpne meny" aria-expanded="false"
         aria-controls="navlinks">☰</button>
       <a class="btn" href="#book">Book kvelden</a>
     </div>
   </header>
 
+  <main id="innhold" tabindex="-1">
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="bilder/dancefloor-bg.webp"
       aria-hidden="true">
@@ -1259,7 +1299,7 @@
         <p>DJ Tiny er født i 1972 og har holdt på siden 90-tallet. Etter femten år tok han en pause fra DJ-livet, men
           var tilbake bak pulten kort tid etter at pandemien var over. Siden den gang har det blitt en lang rekke
           klubbkvelder, bryllup og arrangementer på Østlandet.</p>
-        <p>Repertoaret dekker det meste: House, Dance og EDM, kommersielle hits fra 70-80-90-2000-tallet RNB og
+        <p>Repertoaret dekker det meste: House, Dance og EDM, kommersielle hits fra 70-80-90-2000-tallet, RNB og
           Hip-Hop, Reggaeton, Moombahton, Afro House og Latino. Hva som spilles avgjøres av publikummet som faktisk er
           der, ikke en fast spilleliste.</p>
         <p>Det han er mest kjent for, er overgangene — sømløse skift som holder dansegulvet fullt fra første til siste
@@ -1286,11 +1326,12 @@
       <div class="galleri">
         <p class="tag">DJ-bilder</p>
         <div class="gal">
-          <figure><img src="bilder/dj-tiny-1.jpg" alt="DJ Tiny bak pulten på utendørsarrangement" loading="lazy">
-          </figure>
-          <figure><img src="bilder/dj-tiny-2.jpg" alt="Mikser og pult med fullt lokale i bakgrunnen" loading="lazy">
-          </figure>
-          <figure><img src="bilder/dj-tiny-3.jpg" alt="DJ Tiny i arbeid under blått lys" loading="lazy"></figure>
+          <figure><img src="bilder/dj-tiny-1.jpg" alt="DJ Tiny bak pulten på utendørsarrangement" width="1000"
+              height="1250" loading="lazy" decoding="async"></figure>
+          <figure><img src="bilder/dj-tiny-2.jpg" alt="Mikser og pult med fullt lokale i bakgrunnen" width="1000"
+              height="1250" loading="lazy" decoding="async"></figure>
+          <figure><img src="bilder/dj-tiny-3.jpg" alt="DJ Tiny i arbeid under blått lys" width="1000" height="1250"
+              loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </div>
@@ -1301,19 +1342,21 @@
       <p class="tag">Media</p>
       <h2 class="big">Video, mikstapes<br>og egne mash-ups</h2>
 
-      <div class="tabs" role="tablist">
-        <button class="tab on" role="tab" aria-selected="true" data-p="p-video">Video</button>
-        <button class="tab" role="tab" aria-selected="false" data-p="p-miks">Mikstapes</button>
-        <button class="tab" role="tab" aria-selected="false" data-p="p-mash">Egne mash-ups</button>
+      <div class="tabs" role="tablist" aria-label="Media">
+        <button class="tab on" type="button" role="tab" id="fane-video" aria-selected="true" aria-controls="p-video"
+          data-p="p-video">Video</button>
+        <button class="tab" type="button" role="tab" id="fane-miks" aria-selected="false" aria-controls="p-miks"
+          tabindex="-1" data-p="p-miks">Mikstapes</button>
+        <button class="tab" type="button" role="tab" id="fane-mash" aria-selected="false" aria-controls="p-mash"
+          tabindex="-1" data-p="p-mash">Egne mash-ups</button>
       </div>
 
-      <div class="panel on" id="p-video">
+      <div class="panel on" id="p-video" role="tabpanel" aria-labelledby="fane-video">
         <div class="vids" id="vids"></div>
-        <p class="mnote" id="vidtom" hidden>Ingen videoer lagt inn ennå. Lim inn lenkene i listen <b>videoer</b> nederst
-          i filen.</p>
+        <p class="mnote" id="vidtom" hidden>Videoer kommer snart.</p>
       </div>
 
-      <div class="panel" id="p-miks">
+      <div class="panel" id="p-miks" role="tabpanel" aria-labelledby="fane-miks">
         <div class="miks">
           <article>
             <div class="mrad"><span class="mt">In The Afro House, Afro Dance Mix 1<small>Afro house / afro tech ·
@@ -1351,7 +1394,7 @@
         </div>
       </div>
 
-      <div class="panel" id="p-mash">
+      <div class="panel" id="p-mash" role="tabpanel" aria-labelledby="fane-mash">
         <div class="mash">
           <article class="spor">
             <button class="pb" type="button" aria-label="Spill av WTF! Satisfaction">▶</button>
@@ -1503,7 +1546,7 @@
         <label>Sted<input name="sted" placeholder="By eller lokale" maxlength="200" autocomplete="off"></label>
         <label>Om arrangementet<textarea name="melding" maxlength="3000"></textarea></label>
         <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
-          <label>Firma<input type="text" name="firma" tabindex="-1" autocomplete="off"></label>
+          <label>Firma<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="g-recaptcha" data-sitekey="6Le-W6ItAAAAAJV6iIVcPjlhjmgAWaSN2qNGXcd1" data-theme="dark"></div>
         <button class="btn" type="submit">Send forespørsel</button>
@@ -1513,6 +1556,7 @@
       </form>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="wrap foot">

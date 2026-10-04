@@ -160,24 +160,39 @@ addEventListener('keydown',function(e){if(e.key==='Escape'&&!lbok.hidden)lukkOk(
  });
 })();
 
-// Media-faner
+// Media-faner. Piltastene, Home og End bytter fane, slik WAI-ARIA anbefaler,
+// og bare den valgte fanen ligger i tab-rekkefølgen.
 var tabs=[].slice.call(document.querySelectorAll('.tab'));
-tabs.forEach(function(t){t.addEventListener('click',function(){
- tabs.forEach(function(o){o.classList.remove('on');o.setAttribute('aria-selected','false');
-  document.getElementById(o.dataset.p).classList.remove('on');});
- t.classList.add('on');t.setAttribute('aria-selected','true');
- document.getElementById(t.dataset.p).classList.add('on');
-});});
+function velgFane(t){
+ tabs.forEach(function(o){
+  var valgt=o===t;
+  o.classList.toggle('on',valgt);o.setAttribute('aria-selected',valgt?'true':'false');o.tabIndex=valgt?0:-1;
+  document.getElementById(o.dataset.p).classList.toggle('on',valgt);
+ });
+}
+tabs.forEach(function(t,i){
+ t.addEventListener('click',function(){velgFane(t);});
+ t.addEventListener('keydown',function(e){
+  var n={ArrowRight:i+1,ArrowLeft:i-1,Home:0,End:tabs.length-1}[e.key];
+  if(n===undefined) return;
+  e.preventDefault();
+  var neste=tabs[(n+tabs.length)%tabs.length];
+  neste.focus();velgFane(neste);
+ });
+});
 
 // Booking-skjema: honeypot + minimum utfyllingstid + innsending
 (function(){
  var f=document.getElementById('f'), skjemaVist=Date.now();
+ // Ingen bookinger bakover i tid: nettleseren avviser datoer før i dag.
+ var n=new Date();
+ f.dato.min=n.getFullYear()+'-'+('0'+(n.getMonth()+1)).slice(-2)+'-'+('0'+n.getDate()).slice(-2);
  f.addEventListener('submit',function(e){
   e.preventDefault();
   var btn=f.querySelector('button[type="submit"]'), st=document.getElementById('fstatus'),
       capDiv=f.querySelector('.g-recaptcha'),
       capKlar = capDiv && capDiv.dataset.sitekey && capDiv.dataset.sitekey.indexOf('DIN_')!==0,
-      honeypot=f.querySelector('input[name="firma"]');
+      honeypot=f.querySelector('input[name="_gotcha"]');
 
   function melding(txt){st.textContent=txt;st.hidden=false;}
   function mailtoFallback(){

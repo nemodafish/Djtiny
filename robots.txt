@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dd/
+
+Sitemap: https://djtiny.no/sitemap.xml
