@@ -578,18 +578,64 @@
 
     .credit {
       flex-basis: 100%;
-      margin: 14px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 12px 0 0;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
       font-size: 11px;
-      text-align: center
+      letter-spacing: .24em;
+      text-transform: uppercase
     }
 
     .credit a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       color: var(--text);
-      transition: color .2s
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: none;
+      transition: color .2s, border-color .2s, box-shadow .2s
     }
 
     .credit a:hover {
-      color: var(--ice)
+      color: var(--ice);
+      border-color: var(--ice);
+      box-shadow: 0 0 22px rgba(94, 233, 255, .35)
+    }
+
+    .credit .pil {
+      color: var(--pink);
+      transition: transform .2s
+    }
+
+    .credit a:hover .pil {
+      transform: translate(2px, -2px)
+    }
+
+    .credit .dd-merke {
+      width: 18px;
+      height: 14px;
+      fill: #8a8dff;
+      transition: fill .2s
+    }
+
+    .credit a:hover .dd-merke {
+      fill: currentColor
+    }
+
+    .credit .dd-ord {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -.02em
     }
 
     @media(max-width:900px) {
@@ -890,7 +936,11 @@
         href="mailto:booking@djtiny.no?subject=Musikkbingo%20%E2%80%93%20foresp%C3%B8rsel">booking@djtiny.no</a>
       <a href="personvern.html">Personvern</a>
       <a href="index.html">Til forsiden</a>
-      <p class="credit">Produsert av <a href="https://dotdev.no" target="_blank" rel="noopener">dotdev.no</a></p>
+      <p class="credit">Produsert av <a href="https://dotdev.no" target="_blank" rel="noopener"
+          aria-label="DOTDEV – dotdev.no (åpnes i ny fane)"><svg class="dd-merke" viewBox="0 0 9 7" aria-hidden="true"
+            shape-rendering="crispEdges">
+            <path d="M0 0h2v7H0zM2 0h3v1H2zM2 6h3v1H2zM5 1h2v5H5zM8 6h1v1H8z" />
+          </svg><span class="dd-ord">DOTDEV</span><span class="pil" aria-hidden="true">↗</span></a></p>
     </div>
   </footer>
 
