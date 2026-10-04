@@ -1,0 +1,5 @@
+# Besøksstatistikk (Plausible) via eget domene, satt opp av DOTDEV.
+# Skriptet og hendelsene går gjennom djtiny.no, så CSP i _headers kan stå som 'self'
+# og færre besøk blokkeres. Unngå ord som «analytics», «stats» og «plausible» i stiene.
+/dd/js/s.js   https://plausible.io/js/pa-YD_d-tLELXuEmf75ky4wm.js   200!
+/dd/api/e     https://plausible.io/api/event                       200!

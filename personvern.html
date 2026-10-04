@@ -27,7 +27,11 @@ ul{margin:0 0 14px;padding-left:20px}
 li{margin-bottom:6px}
 strong{color:var(--text)}
 footer{border-top:1px solid var(--line);padding-block:32px;color:var(--mute);font-size:13px}
-</style></head><body>
+</style>
+<!-- Besøksstatistikk uten cookies (Plausible, driftet av DOTDEV). stat.js må lastes før s.js. -->
+<script src="stat.js"></script>
+<script async src="/dd/js/s.js"></script>
+</head><body>
 
 <header><div class="nav">
  <a class="n" href="index.html">DJ TINY</a>
@@ -36,7 +40,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;color:var(--mute);fon
 
 <main><div class="wrap">
  <h1>Personvernerklæring</h1>
- <p class="oppdatert">Sist oppdatert: 1. september 2026</p>
+ <p class="oppdatert">Sist oppdatert: 4. oktober 2026</p>
 
  <p>Denne erklæringen forklarer hvilke personopplysninger DJ Tiny samler inn når du bruker bookingskjemaet på denne nettsiden, hva de brukes til, og hvilke rettigheter du har.</p>
 
@@ -52,26 +56,32 @@ footer{border-top:1px solid var(--line);padding-block:32px;color:var(--mute);fon
   <li>Sted (hvis oppgitt)</li>
   <li>Fritekst om arrangementet (hvis oppgitt)</li>
  </ul>
- <p>Det samles ikke inn opplysninger om deg bare ved at du besøker siden — kun det du selv skriver inn og sender via skjemaet.</p>
+ <p>Når du besøker siden, telles besøket i en besøksstatistikk uten cookies som ikke kan knyttes til deg (se «Besøksstatistikk» under). Ellers samles det bare inn det du selv skriver inn og sender via skjemaet.</p>
 
  <h2>Formål og rettslig grunnlag</h2>
  <p>Opplysningene brukes utelukkende til å svare på og følge opp din bookingforespørsel. Det rettslige grunnlaget er at behandlingen er nødvendig for å svare på en henvendelse med sikte på en avtale (GDPR artikkel 6 (1) b og f).</p>
 
- <h2>Hvem opplysningene deles med</h2>
+ <h2>Besøksstatistikk</h2>
+<p>DJ Tiny teller besøk på nettsiden med Plausible Analytics for å se hvor mange som besøker siden, hvilke sider som leses og hvor besøkende kommer fra. Statistikken bruker ingen informasjonskapsler (cookies) og lagrer ikke IP-adressen din. IP-adressen brukes bare et øyeblikk til å finne omtrentlig sted (land, region og by) og til å lage en kode som skiller besøkende fra hverandre. Koden byttes hver dag, så du kan ikke kjennes igjen fra dag til dag eller på tvers av nettsteder. DJ Tiny ser bare samlede tall, for eksempel antall besøk, hvilke sider som leses, land, type enhet og hvilket nettsted du kom fra.</p>
+<p>Statistikken settes opp og driftes av DOTDEV (Nerland Consulting), som er databehandler for DJ Tiny. Den sendes via djtiny.no til Plausible Insights OÜ i Estland og lagres i EU. Det rettslige grunnlaget er DJ Tinys berettigede interesse i å forstå hvordan nettsiden brukes, så den kan forbedres (GDPR artikkel 6 (1) f).</p>
+
+<h2>Hvem opplysningene deles med</h2>
  <p>Bookingskjemaet leveres av følgende tredjepartstjenester, som hver behandler opplysningene i tråd med sine egne personvernvilkår:</p>
  <ul>
   <li><strong>Formspree</strong> — mottar og videresender skjemainnsendinger som e-post. Se <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree sin personvernerklæring</a>.</li>
   <li><strong>Google reCAPTCHA</strong> — brukes for å skille mennesker fra roboter ved innsending. Google kan behandle IP-adresse og enhetsinformasjon til dette formålet. Se <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googles personvernerklæring</a>.</li>
-  <li><strong>Google Fonts</strong> — skrifttypene på siden lastes fra Googles servere, som da mottar IP-adressen din.</li>
+  <li><strong>DOTDEV og Plausible Analytics</strong> — besøksstatistikken (se «Besøksstatistikk» over). DOTDEV er databehandler for DJ Tiny, og Plausible Insights OÜ (Estland) er underleverandør. Statistikken lagres i EU.</li>
+<li><strong>Google Fonts</strong> — skrifttypene på siden lastes fra Googles servere, som da mottar IP-adressen din.</li>
   <li><strong>YouTube, Vimeo og SoundCloud</strong> — video- og lydklipp på siden vises via innebygde spillere fra disse tjenestene når du selv velger å spille dem av. De kan da motta IP-adresse og annen teknisk informasjon i tråd med sine egne vilkår.</li>
  </ul>
- <p>Disse tjenestene er i all hovedsak driftet fra USA, og opplysninger kan derfor overføres dit. Overføringen skjer i tråd med de aktuelle tjenestenes egne rettslige grunnlag for overføring (som EUs standardavtaler, der det er aktuelt).</p>
+ <p>Med unntak av besøksstatistikken, som lagres i EU, er disse tjenestene i all hovedsak driftet fra USA, og opplysninger kan derfor overføres dit. Overføringen skjer i tråd med de aktuelle tjenestenes egne rettslige grunnlag for overføring (som EUs standardavtaler, der det er aktuelt).</p>
 
  <h2>Cookies</h2>
- <p>Denne siden setter ingen egne informasjonskapsler. De tredjepartstjenestene som er nevnt over (særlig reCAPTCHA, YouTube og Vimeo) kan sette sine egne cookies når de lastes eller brukes.</p>
+ <p>Denne siden setter ingen egne informasjonskapsler, og besøksstatistikken bruker heller ingen. De tredjepartstjenestene som er nevnt over (særlig reCAPTCHA, YouTube og Vimeo) kan sette sine egne cookies når de lastes eller brukes.</p>
 
  <h2>Lagringstid</h2>
  <p>DJ Tiny lagrer ikke bookingforespørsler i noen egen database — de mottas som e-post. Hvor lenge Formspree selv oppbevarer innsendte skjemadata i sitt system, styres av deres egne retningslinjer (se lenke over).</p>
+<p>Besøksstatistikken lagres hos Plausible uten IP-adresse så lenge DJ Tiny bruker tjenesten. Koden som skiller besøkende fra hverandre, byttes hver dag og kan ikke kobles til deg etter at døgnet er omme.</p>
 
  <h2>Dine rettigheter</h2>
  <p>Du har etter personopplysningsloven/GDPR rett til å:</p>
@@ -82,7 +92,8 @@ footer{border-top:1px solid var(--line);padding-block:32px;color:var(--mute);fon
   <li>motsette deg eller be om begrenset behandling</li>
   <li>klage til <a href="https://www.datatilsynet.no" target="_blank" rel="noopener">Datatilsynet</a></li>
  </ul>
- <p>For å bruke noen av disse rettighetene, ta kontakt på <a href="mailto:booking@djtiny.no">booking@djtiny.no</a>.</p>
+ <p>Besøksstatistikken kan ikke knyttes til deg, så den kan ikke brukes til å finne frem til eller slette dine besøk (GDPR artikkel 11).</p>
+<p>For å bruke noen av disse rettighetene, ta kontakt på <a href="mailto:booking@djtiny.no">booking@djtiny.no</a>.</p>
 </div></main>
 
 <footer><div class="wrap">
