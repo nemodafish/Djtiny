@@ -32,6 +32,7 @@
   <meta name="theme-color" content="#0A0410">
   <link rel="preload" as="image" href="bilder/musikkbingo-bg.webp" fetchpriority="high">
   <link rel="preload" href="fonter/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonter/monoton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonter/fonter.css">
   <script type="application/ld+json">
     {
@@ -68,7 +69,8 @@
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      scrollbar-color: rgba(158, 134, 188, .35) var(--bg)
     }
 
     body {
@@ -130,7 +132,7 @@
     }
 
     .neon {
-      font-family: "Monoton", cursive;
+      font-family: "Monoton", sans-serif;
       font-weight: 400;
       letter-spacing: .02em;
       line-height: 1.05;
@@ -189,7 +191,7 @@
     }
 
     .nav .n {
-      font-family: "Monoton", cursive;
+      font-family: "Monoton", sans-serif;
       font-size: clamp(16px, 4vw, 20px);
       color: #fff;
       text-shadow: 0 0 10px var(--pink);
@@ -702,8 +704,10 @@
         background-position: 34% center
       }
 
+      /* «MUSIKKBINGO» er ett langt ord i en bred skrift: 10,4vw holder det innenfor
+         kantene helt ned til 320 px brede telefoner (12vw kuttet ordet og skjøv innholdet mot høyre) */
       .hero h1 {
-        font-size: clamp(42px, 12vw, 58px)
+        font-size: clamp(28px, 10.4vw, 58px)
       }
 
       .hero .sub {

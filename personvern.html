@@ -6,10 +6,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0410'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0A0410">
 <link rel="preload" href="fonter/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonter/monoton-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonter/fonter.css">
 <style>
 :root{--bg:#0A0410;--pink:#FF2E9A;--violet:#8A2BE2;--ice:#5EE9FF;--text:#F3E9FF;--mute:#9E86BC;--line:rgba(243,233,255,.14)}
 *{box-sizing:border-box}
+html{scrollbar-color:rgba(158,134,188,.35) var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.7 "Outfit",sans-serif}
 a{color:var(--ice);text-decoration:none}a:hover{text-shadow:0 0 12px var(--ice)}
 :focus-visible{outline:2px solid var(--ice);outline-offset:3px}
@@ -19,7 +21,7 @@ main:focus{outline:none}
 .wrap{max-width:760px;margin:0 auto;padding-inline:clamp(20px,5vw,56px)}
 header{position:sticky;top:0;z-index:40;background:rgba(10,4,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:760px;margin:0 auto;padding-inline:clamp(20px,5vw,56px)}
-.n{font-family:"Monoton",cursive;font-size:20px;color:#fff;text-shadow:0 0 10px var(--pink)}
+.n{font-family:"Monoton",sans-serif;font-size:20px;color:#fff;text-shadow:0 0 10px var(--pink)}
 .tilbake{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
 .tilbake:hover{color:var(--ice)}
 main{padding-block:clamp(50px,8vw,90px)}

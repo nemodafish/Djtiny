@@ -1,3 +1,7 @@
+# Netlify-adressen viste en kopi av hele siden. Alle besøk dit sendes til djtiny.no,
+# så siden bare finnes på ett sted (bedre for Google og for tilliten).
+https://willowy-lebkuchen-862b66.netlify.app/*   https://djtiny.no/:splat   301!
+
 # Besøksstatistikk (Plausible) via eget domene, satt opp av DOTDEV.
 # Skriptet og hendelsene går gjennom djtiny.no, så CSP i _headers kan stå som 'self'
 # og færre besøk blokkeres. Unngå ord som «analytics», «stats» og «plausible» i stiene.

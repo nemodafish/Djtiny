@@ -45,6 +45,12 @@ function embed(v){return v.type==='yt'
 var vids=document.getElementById('vids'),vidtom=document.getElementById('vidtom'),
  lb=document.getElementById('lb'),lbf=document.getElementById('lbf'),lbx=document.getElementById('lbx'),sisteKnapp=null;
 
+// Mens en dialog er åpen, er resten av siden inert: Tab-tasten blir i dialogen,
+// og skjermlesere leser bare den (slik aria-modal lover).
+function sperrSiden(sperr){
+ [].forEach.call(document.body.children,function(el){ if(!el.classList.contains('lb')) el.inert=sperr; });
+}
+
 (function tegn(){
  var n=0;
  videoer.forEach(function(item){
@@ -97,19 +103,22 @@ function apne(v,knapp){
   iframe.title='DJ Tiny video';
   lbf.appendChild(iframe);
  }
- lb.hidden=false;document.body.style.overflow='hidden';lbx.focus();
+ lb.hidden=false;sperrSiden(true);document.body.style.overflow='hidden';lbx.focus();
 }
 function lukk(){
- lb.hidden=true;lbf.textContent='';document.body.style.overflow='';
+ lb.hidden=true;lbf.textContent='';sperrSiden(false);document.body.style.overflow='';
  if(sisteKnapp)sisteKnapp.focus();
 }
 lbx.addEventListener('click',lukk);
 lb.addEventListener('click',function(e){if(e.target===lb)lukk();});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)lukk();});
 
-var lbok=document.getElementById('lbok'), lbokx=document.getElementById('lbokx');
-function visOk(){lbok.hidden=false;document.body.style.overflow='hidden';lbokx.focus();}
-function lukkOk(){lbok.hidden=true;document.body.style.overflow='';}
+var lbok=document.getElementById('lbok'), lbokx=document.getElementById('lbokx'), okFokus=null;
+function visOk(){okFokus=document.activeElement;lbok.hidden=false;sperrSiden(true);document.body.style.overflow='hidden';lbokx.focus();}
+function lukkOk(){
+ lbok.hidden=true;sperrSiden(false);document.body.style.overflow='';
+ if(okFokus&&okFokus!==document.body&&okFokus.focus)okFokus.focus();
+}
 lbokx.addEventListener('click',lukkOk);
 lbok.addEventListener('click',function(e){if(e.target===lbok)lukkOk();});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&!lbok.hidden)lukkOk();});
@@ -118,11 +127,16 @@ addEventListener('keydown',function(e){if(e.key==='Escape'&&!lbok.hidden)lukkOk(
 (function(){
  var menub=document.getElementById('menub'), navEl=document.querySelector('.nav');
  if(!menub) return;
- function lukkMeny(){navEl.classList.remove('open');menub.setAttribute('aria-expanded','false');menub.textContent='☰';}
- function apneMeny(){navEl.classList.add('open');menub.setAttribute('aria-expanded','true');menub.textContent='✕';}
+ function lukkMeny(){navEl.classList.remove('open');menub.setAttribute('aria-expanded','false');menub.setAttribute('aria-label','Åpne meny');menub.textContent='☰';}
+ function apneMeny(){navEl.classList.add('open');menub.setAttribute('aria-expanded','true');menub.setAttribute('aria-label','Lukk meny');menub.textContent='✕';}
  menub.addEventListener('click',function(){navEl.classList.contains('open')?lukkMeny():apneMeny();});
  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',lukkMeny);});
- addEventListener('keydown',function(e){if(e.key==='Escape')lukkMeny();});
+ addEventListener('keydown',function(e){
+  if(e.key!=='Escape'||!navEl.classList.contains('open')) return;
+  // Sto fokus i menyen som lukkes, flyttes det tilbake til menyknappen
+  var iMenyen=document.getElementById('navlinks').contains(document.activeElement);
+  lukkMeny(); if(iMenyen) menub.focus();
+ });
 })();
 
 // Mash-up-spiller: én av gangen, klikkbar tidslinje
@@ -132,24 +146,26 @@ addEventListener('keydown',function(e){if(e.key==='Escape'&&!lbok.hidden)lukkOk(
   var m=Math.floor(s/60), r=Math.floor(s%60); return m+':'+('0'+r).slice(-2); }
  spor.forEach(function(el){
   var lyd=el.querySelector('audio'), knapp=el.querySelector('.pb'),
-      bar=el.querySelector('.bar'), fyll=el.querySelector('.bar i'), tid=el.querySelector('.tid');
+      bar=el.querySelector('.bar'), fyll=el.querySelector('.bar i'), tid=el.querySelector('.tid'),
+      navn=(knapp.getAttribute('aria-label')||'').replace(/^Spill av /,'');
   lyd.addEventListener('loadedmetadata',function(){tid.textContent=mmss(lyd.duration);});
   lyd.addEventListener('timeupdate',function(){
    fyll.style.width=(lyd.currentTime/lyd.duration*100||0)+'%';
    tid.textContent=mmss(lyd.duration-lyd.currentTime);
   });
   lyd.addEventListener('ended',function(){stopp();fyll.style.width='0';});
+  lyd.addEventListener('pause',function(){stopp();});
   lyd.addEventListener('error',function(){feil();});
 
-  function stopp(){knapp.textContent='▶';knapp.classList.remove('spiller');}
+  // Skjermlesere får vite hva knappen gjør nå: «Spill av …» eller «Pause …»
+  function stopp(){knapp.textContent='▶';knapp.classList.remove('spiller');knapp.setAttribute('aria-label','Spill av '+navn);}
   function feil(){stopp();el.classList.add('feil');tid.textContent='Fant ikke lydfila';}
 
   knapp.addEventListener('click',function(){
    if(lyd.paused){
-    spor.forEach(function(a){var x=a.querySelector('audio');
-     if(x!==lyd&&!x.paused){x.pause();a.querySelector('.pb').textContent='▶';a.querySelector('.pb').classList.remove('spiller');}});
+    spor.forEach(function(a){var x=a.querySelector('audio'); if(x!==lyd&&!x.paused) x.pause();});
     var p=lyd.play();
-    knapp.textContent='❚❚';knapp.classList.add('spiller');
+    knapp.textContent='❚❚';knapp.classList.add('spiller');knapp.setAttribute('aria-label','Pause '+navn);
     if(p&&p.catch) p.catch(function(){feil();});
    } else {lyd.pause();stopp();}
   });
@@ -181,6 +197,27 @@ tabs.forEach(function(t,i){
  });
 });
 
+// reCAPTCHA lastes først når bookingskjemaet nærmer seg skjermen (eller får fokus).
+// Da sendes ingenting til Google fra besøkende som aldri ser skjemaet, og siden laster raskere.
+// hl=no gir robotsjekken på norsk, som resten av siden.
+(function(){
+ var f=document.getElementById('f'), lastet=false;
+ if(!f) return;
+ function lastCaptcha(){
+  if(lastet) return; lastet=true;
+  var s=document.createElement('script');
+  s.src='https://www.google.com/recaptcha/api.js?hl=no'; s.async=true; s.defer=true;
+  document.head.appendChild(s);
+ }
+ f.addEventListener('focusin',lastCaptcha);
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(endringer){
+   if(endringer.some(function(x){return x.isIntersecting;})){ io.disconnect(); lastCaptcha(); }
+  },{rootMargin:'800px 0px'});
+  io.observe(f);
+ } else lastCaptcha();
+})();
+
 // Booking-skjema: honeypot + minimum utfyllingstid + innsending
 (function(){
  var f=document.getElementById('f'), skjemaVist=Date.now();
@@ -208,7 +245,8 @@ tabs.forEach(function(t,i){
    return;
   }
 
-  if(capKlar && typeof grecaptcha!=='undefined' && grecaptcha.getResponse().length===0){
+  // getResponse finnes først når reCAPTCHA er ferdig lastet; før det kastet linjen feil, og skjemaet sto stille
+  if(capKlar && typeof grecaptcha!=='undefined' && grecaptcha.getResponse && grecaptcha.getResponse().length===0){
    melding('Vennligst bekreft at du ikke er en robot.');
    return;
   }

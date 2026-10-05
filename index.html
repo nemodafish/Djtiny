@@ -32,8 +32,9 @@
   <meta name="theme-color" content="#0A0410">
   <link rel="preload" as="image" href="bilder/dancefloor-bg.webp" fetchpriority="high">
   <link rel="preload" href="fonter/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonter/monoton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonter/fonter.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- reCAPTCHA lastes av app.js først når bookingskjemaet nærmer seg skjermen -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,7 +68,8 @@
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      scrollbar-color: rgba(158, 134, 188, .35) var(--bg)
     }
 
     body {
@@ -143,7 +145,7 @@
     }
 
     .neon {
-      font-family: "Monoton", cursive;
+      font-family: "Monoton", sans-serif;
       font-weight: 400;
       letter-spacing: .02em;
       line-height: 1.05;
@@ -184,6 +186,10 @@
       font-weight: 600
     }
 
+    h2.tag {
+      margin: 1em 0
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -201,7 +207,7 @@
     }
 
     .nav .n {
-      font-family: "Monoton", cursive;
+      font-family: "Monoton", sans-serif;
       font-size: clamp(16px, 4vw, 20px);
       margin-right: auto;
       color: #fff;
@@ -871,8 +877,17 @@
       margin: 0 0 26px
     }
 
+    /* Plassen til robotsjekken (304 × 78 px) holdes av, så knappen ikke hopper når den lastes */
     .g-recaptcha {
-      margin-top: 2px
+      margin-top: 2px;
+      min-height: 78px
+    }
+
+    @media(max-width:343px) {
+      .g-recaptcha {
+        transform: scale(.9);
+        transform-origin: 0 0
+      }
     }
 
     .steder {
@@ -953,6 +968,7 @@
       color: var(--mute)
     }
 
+    /* color-scheme gir mørk kalender, nedtrekksliste og autofyll i stedet for lyse systemfarger */
     input,
     select,
     textarea {
@@ -961,7 +977,8 @@
       background: rgba(20, 8, 37, .7);
       border: 1px solid var(--line);
       border-radius: 12px;
-      padding: 14px 16px
+      padding: 14px 16px;
+      color-scheme: dark
     }
 
     input:focus,
@@ -1132,7 +1149,9 @@
         border-bottom: 1px solid var(--line);
         max-height: 0;
         overflow: hidden;
-        transition: max-height .25s ease
+        /* skjult meny skal heller ikke kunne nås med Tab-tasten */
+        visibility: hidden;
+        transition: max-height .25s ease, visibility 0s linear .25s
       }
 
       .navlinks a.l {
@@ -1147,7 +1166,9 @@
       }
 
       .nav.open .navlinks {
-        max-height: 320px
+        max-height: 320px;
+        visibility: visible;
+        transition: max-height .25s ease
       }
     }
 
@@ -1251,13 +1272,14 @@
   <header>
     <div class="wrap nav">
       <a class="n" href="#">DJ TINY</a>
+      <!-- Menyknappen står foran menyen, så Tab går rett inn i menyen når den åpnes (CSS-order viser den fortsatt lengst til høyre) -->
+      <button class="menub" id="menub" type="button" aria-label="Åpne meny" aria-expanded="false"
+        aria-controls="navlinks">☰</button>
       <nav class="navlinks" id="navlinks" aria-label="Hovedmeny">
         <a class="l" href="#om">Om DJ Tiny</a><a class="l" href="#tjenester">Tjenester</a><a class="l"
           href="#media">Media</a><a class="l" href="#datoer">Bookinger</a><a class="l mb"
           href="musikkbingo.html">Musikkbingo</a>
       </nav>
-      <button class="menub" id="menub" type="button" aria-label="Åpne meny" aria-expanded="false"
-        aria-controls="navlinks">☰</button>
       <a class="btn" href="#book">Book kvelden</a>
     </div>
   </header>
@@ -1432,7 +1454,7 @@
 
   <section id="tjenester">
     <div class="wrap">
-      <p class="tag">Tjenester</p>
+      <h2 class="tag">Tjenester</h2>
       <div class="cards">
         <article class="card">
           <p class="tag">01</p>
