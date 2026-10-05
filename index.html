@@ -7,8 +7,10 @@
   <title>DJ Tiny — DJ på Østlandet til bryllup, firmafest og klubb</title>
   <meta name="description"
     content="DJ Tiny leverer DJ, musikkbingo og stemning til bryllup, firmafest, klubb og private events på Østlandet. Send forespørsel og få svar innen 24 timer.">
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0410'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
+  <!-- Ikonet må ligge som egne filer for at Google skal vise det i søkeresultatet -->
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
   <meta property="og:site_name" content="DJ Tiny">
@@ -49,6 +51,15 @@
       "areaServed": { "@type": "AdministrativeArea", "name": "Østlandet" },
       "identifier": { "@type": "PropertyValue", "propertyID": "Organisasjonsnummer", "value": "980450163" },
       "sameAs": ["https://soundcloud.com/glenn-krantz"]
+    }
+  </script>
+  <!-- Navnet Google viser over adressen i søkeresultatet («DJ Tiny» i stedet for «djtiny.no») -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DJ Tiny",
+      "url": "https://djtiny.no/"
     }
   </script>
   <style>
