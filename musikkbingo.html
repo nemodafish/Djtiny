@@ -403,6 +403,29 @@
       margin: 18px 0 0
     }
 
+    /* Promovideoen under konseptteksten: spilles bare når noen trykker (preload="none") */
+    .promo {
+      margin: clamp(32px, 5vw, 56px) 0 0;
+      max-width: 960px
+    }
+
+    .promo video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      background: #000;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 0 70px rgba(255, 46, 154, .25)
+    }
+
+    .promo figcaption {
+      color: var(--mute);
+      font-size: 15px;
+      margin-top: 12px
+    }
+
     .fordeler {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -790,6 +813,13 @@
         spennende bingo og fantastisk stemning!</p>
       <p>Vi skaper en komplett kveldsopplevelse med DJ, engasjerte bingovertinner og profesjonell gjennomføring –
         tilpasset deres lokale og gjester.</p>
+      <figure class="promo">
+        <video controls playsinline preload="none" poster="bilder/falsk-alarm-promo.jpg" width="1920" height="1080"
+          aria-label="Promovideo for Musikk Bingo Falsk Alarm">
+          <source src="video/falsk-alarm-promo.mp4" type="video/mp4">
+        </video>
+        <figcaption>Se Musikk Bingo Falsk Alarm i aksjon, 35 sekunder med lyd.</figcaption>
+      </figure>
     </div>
   </section>
 
